@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Will You Be My Valentine? ❤️</title>
+
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      font-family: "Segoe UI", sans-serif;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+      text-align: center;
+      max-width: 420px;
+    }
+
+    h1 {
+      color: #ff4d6d;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    button {
+      padding: 12px 28px;
+      font-size: 16px;
+      margin: 20px 10px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    #yes {
+      background-color: #ff4d6d;
+      color: white;
+    }
+
+    #no {
+      background-color: #adb5bd;
+      color: white;
+      position: absolute;
+    }
+
+    #response {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #ff4d6d;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Hey ❤️</h1>
+    <p>
+      You’re my favorite human<br>
+      and my best partner in every commit 💻💖<br><br>
+      <strong>Will you be my Valentine?</strong>
+    </p>
+
+    <button id="yes" onclick="yesClicked()">Yes 💕</button>
+    <button id="no" onmouseover="runAway()" onclick="runAway()">No 🙄</button>
+
+    <div id="response"></div>
+  </div>
+
+  <script>
+    function runAway() {
+      const noBtn = document.getElementById("no");
+
+      const maxX = window.innerWidth - noBtn.offsetWidth;
+      const maxY = window.innerHeight - noBtn.offsetHeight;
+
+      const randomX = Math.floor(Math.random() * maxX);
+      const randomY = Math.floor(Math.random() * maxY);
+
+      noBtn.style.left = randomX + "px";
+      noBtn.style.top = randomY + "px";
+    }
+
+    function yesClicked() {
+      document.querySelector(".card").innerHTML = `
+        <h1>YAY!!! 💖</h1>
+        <p>
+          Process completed successfully ✅<br><br>
+          Happy Valentine’s Day, my love 😘<br>
+          I can’t wait to celebrate with you ❤️
+        </p>
+      `;
+    }
+  </script>
+
+</body>
+</html>
